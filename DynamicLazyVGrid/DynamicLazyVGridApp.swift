@@ -1,9 +1,11 @@
+//  /*
 //
-//  DynamicLazyVGridApp.swift
-//  DynamicLazyVGrid
+//  Project: DynamicLazyVGrid
+//  File: ContentView.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 01.10.2023
 //
-//  Created by Elaidzha Shchukin on 01.10.2023.
-//
+//  */
 
 import SwiftUI
 

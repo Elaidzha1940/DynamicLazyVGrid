@@ -1,21 +1,25 @@
+//  /*
 //
-//  ContentView.swift
-//  DynamicLazyVGrid
+//  Project: DynamicLazyVGrid
+//  File: ContentView.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 01.10.2023
 //
-//  Created by Elaidzha Shchukin on 01.10.2023.
-//
+//  */
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 200))]) {
+                ForEach(0..<10) {tem in
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .frame(height: 100)
+                }
+            }
         }
-        .padding()
     }
 }
 

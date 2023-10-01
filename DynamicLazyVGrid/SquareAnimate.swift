@@ -67,7 +67,7 @@ struct SquareAnimate: View {
             RoundedRectangle(cornerRadius: 2, style: .circular)
                 .frame(width: 30, height: 25)
                 .foregroundColor(.black)
-                .cornerRadius(5)
+                //.cornerRadius(5)
             
             Rectangle()
                 .frame(width: 30, height: 2)
@@ -83,7 +83,15 @@ struct SquareAnimate: View {
                 .frame(width: 2, height: 20)
                 .offset(x: -5, y: animation.isThird ? 0 : -25)
             
+            Rectangle()
+                .frame(width: 30, height: 2)
+                .offset(x: animation.isThird ? 0 : 30)
+            
         }
+        .clipped()
+        .mask({
+            RoundedRectangle(cornerRadius: 5, style: .continuous)
+        })
         .foregroundColor(.white)
         .onTapGesture {
             withAnimation {

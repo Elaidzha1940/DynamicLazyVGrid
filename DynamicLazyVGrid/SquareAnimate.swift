@@ -65,15 +65,30 @@ struct SquareAnimate: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 2, style: .circular)
-                .frame(width: 30, height: 20)
+                .frame(width: 30, height: 25)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
             Rectangle()
                 .frame(width: 30, height: 2)
-                .foregroundColor(.white)
                 .offset(x: animation.isSecond ? 0 : 30)
+            Rectangle()
+                .frame(width: 2, height: 20)
+                .offset(y: animation.isSecond ? 0 : 25)
+            
+            Rectangle()
+                .frame(width: 2, height: 20)
+                .offset(x: 5, y: animation.isThird ? 0 : 25)
+            Rectangle()
+                .frame(width: 2, height: 20)
+                .offset(x: -5, y: animation.isThird ? 0 : -25)
+            
         }
+        .foregroundColor(.white)
         .onTapGesture {
             withAnimation {
                 animation.next()
+                Height = animation.resize
             }
         }
     }

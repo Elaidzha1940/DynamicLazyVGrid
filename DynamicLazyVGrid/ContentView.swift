@@ -18,6 +18,7 @@ struct ContentView: View {
     var body: some View {
         
         ScrollView {
+            SquareAnimate(Height: $Height, heightSecond: $heightSecond)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Height), spacing: 10)], spacing: 10) {
                 ForEach(0..<10) {item in
                     RoundedRectangle(cornerRadius: 20, style: .continuous)

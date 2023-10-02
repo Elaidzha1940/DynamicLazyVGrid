@@ -55,8 +55,8 @@ enum Animation {
 }
 
 struct SquareAnimate: View {
-    @State var Height: CGFloat = 120
-    @State var heightSecond: CGFloat = 150
+    @Binding var Height: CGFloat
+    @Binding var heightSecond: CGFloat
     
     @State var animation: Animation = .first(200)
     
@@ -97,11 +97,18 @@ struct SquareAnimate: View {
             withAnimation {
                 animation.next()
                 Height = animation.resize
+                if Height == 200 {
+                    heightSecond = 200
+                } else if Height == 120 {
+                    heightSecond = 150
+                } else {
+                    heightSecond = 120
+                }
             }
         }
     }
 }
 
 #Preview {
-    SquareAnimate()
+    SquareAnimate(Height: .constant(200), heightSecond: .constant(200))
 }

@@ -19,12 +19,15 @@ struct ContentView: View {
         
         ScrollView {
             SquareAnimate(Height: $Height, heightSecond: $heightSecond)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                .padding()
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Height), spacing: 10)], spacing: 10) {
                 ForEach(0..<10) {item in
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .frame(height: heightSecond)
                         .foregroundColor(colors[item % colors.count])
                 }
+                .shadow(radius: 10)
             }
             .padding(.horizontal)
         }

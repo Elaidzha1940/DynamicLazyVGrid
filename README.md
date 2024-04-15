@@ -1,4 +1,4 @@
-⌨️ Dynamic LazyVGrid
+⌨️ Dynamic LazyVGrid.
 =========
 
 - Performance & Flexibility: SwiftUI's dynamic LazyVGrid offers top-notch performance and flexibility. It efficiently handles large datasets while allowing easy customization of column sizes and counts.
